@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .wrap-tab {
+    @apply flex border-t-2 border-b-2 w-full p-3 mt-6 scrollbar overflow-hidden;
+  }
+
+  .container-tab {
+    @apply flex justify-between items-center container mx-auto;
+  }
+
+  .tab-active {
+    @apply text-blue-700 font-extrabold;
+  }
+
+  .wrap-content {
+    @apply bg-white my-4 p-4 pb-12;
+  }
+}
