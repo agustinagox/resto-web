@@ -3,6 +3,7 @@ import React from "react";
 import { ilhelp, ilhistory, ilnotif, ilterm } from "../../assets/illustrations";
 import Footer from "../../components/footer/footer";
 import Navbar from "../../components/navbar/navbar";
+import { Link } from "react-router-dom";
 
 const Account = () => {
   return (
@@ -13,10 +14,12 @@ const Account = () => {
         <nav className="container mx-auto py-4 px-4">
           <ol className="flex items-center">
             <li>
-              <a href="" className="flex items-center">
-                <span className="text-gray-500">Home</span>
-                <ChevronRightIcon className="h-4 w-4 mx-2 text-gray-500" />
-              </a>
+              <Link to="/main">
+                <a href="" className="flex items-center">
+                  <span className="text-gray-500">Home</span>
+                  <ChevronRightIcon className="h-4 w-4 mx-2 text-gray-500" />
+                </a>
+              </Link>
             </li>
             <li>
               <a href="" className="flex items-center">
@@ -29,38 +32,50 @@ const Account = () => {
 
         <div className="relative container mx-auto pb-6">
           <div className="grid grid-cols-2 lg:grid-cols-4">
-            <a href="#" className="mx-auto mb-6">
-              <div>
-                <img src={ilnotif} className="h-24 mx-auto lg:h-44" alt="" />
-              </div>
-              <h3 className="text-black text-sm lg:text-lg mt-4 font-semibold text-center">
-                Notification
-              </h3>
-            </a>
-            <a href="#" className="mx-auto mb-6">
-              <div>
-                <img src={ilhistory} className="h-24 mx-auto lg:h-44" alt="" />
-              </div>
-              <h3 className="text-black text-sm lg:text-lg mt-4 font-semibold text-center">
-                Order History
-              </h3>
-            </a>
-            <a href="#" className="mx-auto mb-6">
-              <div>
-                <img src={ilterm} className="h-24 mx-auto lg:h-44" alt="" />
-              </div>
-              <h3 className="text-black text-sm lg:text-lg mt-4 font-semibold text-center">
-                Term and Condition
-              </h3>
-            </a>
-            <a href="#" className="mx-auto mb-6">
-              <div>
-                <img src={ilhelp} className="h-24 mx-auto lg:h-44" alt="" />
-              </div>
-              <h3 className="text-black text-sm lg:text-lg mt-4 font-semibold text-center">
-                Help and Contact
-              </h3>
-            </a>
+            <Link to="/notif">
+              <a href="#" className="mx-auto mb-6">
+                <div>
+                  <img src={ilnotif} className="h-24 mx-auto lg:h-44" alt="" />
+                </div>
+                <h3 className="text-black text-sm lg:text-lg mt-4 font-semibold text-center">
+                  Notification
+                </h3>
+              </a>
+            </Link>
+            <Link to="/orderhistory">
+              <a href="#" className="mx-auto mb-6">
+                <div>
+                  <img
+                    src={ilhistory}
+                    className="h-24 mx-auto lg:h-44"
+                    alt=""
+                  />
+                </div>
+                <h3 className="text-black text-sm lg:text-lg mt-4 font-semibold text-center">
+                  Order History
+                </h3>
+              </a>
+            </Link>
+            <Link to="/termcondition">
+              <a href="#" className="mx-auto mb-6">
+                <div>
+                  <img src={ilterm} className="h-24 mx-auto lg:h-44" alt="" />
+                </div>
+                <h3 className="text-black text-sm lg:text-lg mt-4 font-semibold text-center">
+                  Term and Condition
+                </h3>
+              </a>
+            </Link>
+            <Link to="/help">
+              <a href="#" className="mx-auto mb-6">
+                <div>
+                  <img src={ilhelp} className="h-24 mx-auto lg:h-44" alt="" />
+                </div>
+                <h3 className="text-black text-sm lg:text-lg mt-4 font-semibold text-center">
+                  Help and Contact
+                </h3>
+              </a>
+            </Link>
           </div>
         </div>
       </div>

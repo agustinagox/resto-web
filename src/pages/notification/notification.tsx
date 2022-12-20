@@ -4,6 +4,7 @@ import CardNotif from "../../components/card-notif/card-notif";
 import Footer from "../../components/footer/footer";
 import Navbar from "../../components/navbar/navbar";
 import { notif } from "../../store/notif";
+import {Link} from 'react-router-dom'
 
 const Notification = () => {
   return (
@@ -14,16 +15,20 @@ const Notification = () => {
         <nav className="container mx-auto py-4 px-4">
           <ol className="flex items-center">
             <li>
-              <a href="" className="flex items-center">
-                <span className="text-gray-500">Home</span>
-                <ChevronRightIcon className="h-4 w-4 mx-2 text-gray-500" />
-              </a>
+              <Link to='/main'>
+                <a href="" className="flex items-center">
+                  <span className="text-gray-500">Home</span>
+                  <ChevronRightIcon className="h-4 w-4 mx-2 text-gray-500" />
+                </a>
+              </Link>
             </li>
             <li>
+              <Link to='/account'>
               <a href="" className="flex items-center">
                 <span className="text-gray-500">Account</span>
                 <ChevronRightIcon className="h-4 w-4 mx-2 text-gray-500" />
               </a>
+              </Link>
             </li>
             <li>
               <a href="" className="flex items-center">
@@ -36,7 +41,7 @@ const Notification = () => {
           <h1 className="text-2xl text-black font-bold">Notification</h1>
           <div className="mt-8 flex flex-col space-y-4">
             {notif.map((item) => (
-                <CardNotif name={item.name} time={item.time} />
+              <CardNotif name={item.name} time={item.time} />
             ))}
           </div>
         </div>

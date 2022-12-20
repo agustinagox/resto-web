@@ -9,5 +9,6 @@ module.exports = withMT({
     require("@tailwindcss/line-clamp"),
     require("tailwind-scrollbar"),
     require("@tailwindcss/forms"),
+    require('tailwind-scrollbar-hide'),
   ],
 });

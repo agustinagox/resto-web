@@ -1,17 +1,18 @@
 import {
   ChevronRightIcon,
+  MapPinIcon,
   MinusIcon,
-  PlusCircleIcon,
   PlusIcon,
   XMarkIcon,
 } from "@heroicons/react/24/solid";
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import CardRecommend from "../../components/card-recommend/card-recommend";
+import CardFood from "../../components/card-food/card-food";
 import Footer from "../../components/footer/footer";
 import Navbar from "../../components/navbar/navbar";
 import { recommend } from "../../store/recommend";
-import { Menu1, Menu3 } from "../../assets/illustrations";
+import { Menu3 } from "../../assets/illustrations";
+import { Link } from "react-router-dom";
 
 const Recommend = () => {
   const next = () => {
@@ -53,6 +54,14 @@ const Recommend = () => {
   return (
     <div className="bg-gray-100">
       <Navbar type="signin" />
+      <div className="flex bg-white">
+        <div className="px-4 py-4 lg:px-0 container mx-auto">
+          <div className="flex space-x-3 border-[0.8px] border-black p-2 px-4 rounded-xl">
+            <MapPinIcon className="h-6 w-6 text-red-500" />
+            <h6 className="text-black text-lg">Deliver to</h6>
+          </div>
+        </div>
+      </div>
       <div className="relative mt-4 bg-white pb-6 mb-4">
         {/* breadcrumbs */}
         <nav className="container mx-auto py-4 px-4">
@@ -250,9 +259,11 @@ const Recommend = () => {
                                   <MinusIcon className="h-5 w-5 text-blue-700" />
                                 </button>
                               </div>
-                              <button className="bg-blue-700 w-full py-2 text-white rounded-xl">
-                                Add to Bag - $15
-                              </button>
+                              <Link to="/bag" className="w-full">
+                                <button className="bg-blue-700 w-full py-2 text-white rounded-xl">
+                                  Add to Bag - $15
+                                </button>
+                              </Link>
                             </div>
                           </div>
                           {/* /End replace */}
@@ -269,7 +280,7 @@ const Recommend = () => {
         <div className="mt-4 container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 mt-8">
             {recommend.map((item) => (
-              <CardRecommend
+              <CardFood
                 onClick={next}
                 key={item.id}
                 image={item.img}

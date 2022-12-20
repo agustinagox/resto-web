@@ -9,10 +9,11 @@ import React, { useState, Fragment } from "react";
 import Footer from "../../components/footer/footer";
 import Navbar from "../../components/navbar/navbar";
 import { recommend } from "../../store/recommend";
-import CardRecommend from "../../components/card-recommend/card-recommend";
+import CardRecommend from "../../components/card-food/card-food";
 import { Dialog, Transition } from "@headlessui/react";
 import { Menu3 } from "../../assets/illustrations";
 import "./index.css";
+import {Link} from 'react-router-dom'
 
 const AllCategory = () => {
   const next = () => {
@@ -50,6 +51,7 @@ const AllCategory = () => {
       setQty(0);
     }
   };
+
   return (
     <div className="bg-gray-100">
       <Navbar type="signin" />
@@ -239,9 +241,11 @@ const AllCategory = () => {
                                   <MinusIcon className="h-5 w-5 text-blue-700" />
                                 </button>
                               </div>
-                              <button className="bg-blue-700 w-full py-2 text-white rounded-xl">
-                                Add to Bag - $15
-                              </button>
+                              <Link to='/bag' className="w-full">
+                                <button className="bg-blue-700 w-full py-2 text-white rounded-xl">
+                                  Add to Bag - $15
+                                </button>
+                              </Link>
                             </div>
                           </div>
                           {/* /End replace */}

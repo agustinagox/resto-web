@@ -5,6 +5,7 @@ import CardBag from "../../components/card-bag/card-bag";
 import Footer from "../../components/footer/footer";
 import Navbar from "../../components/navbar/navbar";
 import { bag } from "../../store/bag";
+import { Link } from "react-router-dom";
 
 const Bag = () => {
   const [bagEmpty, setBagEmpty] = useState(false);
@@ -62,9 +63,11 @@ const Bag = () => {
       <div className="relative container mx-auto mt-4 p-4 bg-white mb-4 rounded-xl">
         <div className="flex items-center justify-between">
           <h1 className="text-xl font-extrabold text-black">Total: $90</h1>
-          <button className="w-32 lg:w-64 py-2 bg-blue-700 rounded-xl text-white lg:text-xl">
-            Checkout
-          </button>
+          <Link to="/checkout">
+            <button className="w-32 lg:w-64 py-2 bg-blue-700 rounded-xl text-white lg:text-xl">
+              Checkout
+            </button>
+          </Link>
         </div>
       </div>
 

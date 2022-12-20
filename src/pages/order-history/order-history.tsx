@@ -4,6 +4,7 @@ import CardHistory from "../../components/card-history/card-history";
 import Footer from "../../components/footer/footer";
 import Navbar from "../../components/navbar/navbar";
 import { orderHistory } from "../../store/history-orderlist";
+import { Link } from "react-router-dom";
 
 const OrderHistory = () => {
   return (
@@ -14,16 +15,19 @@ const OrderHistory = () => {
         <nav className="container mx-auto py-4 px-4">
           <ol className="flex items-center">
             <li>
-              <a href="" className="flex items-center">
-                <span className="text-gray-500">Home</span>
-                <ChevronRightIcon className="h-4 w-4 mx-2 text-gray-500" />
-              </a>
+              <Link to="/main">
+                <a href="" className="flex items-center">
+                  <span className="text-gray-500">Home</span>
+                  <ChevronRightIcon className="h-4 w-4 mx-2 text-gray-500" />
+                </a>
+              </Link>
             </li>
             <li>
+              <Link to='/account'>
               <a href="" className="flex items-center">
                 <span className="text-gray-500">Account</span>
                 <ChevronRightIcon className="h-4 w-4 mx-2 text-gray-500" />
-              </a>
+              </a></Link>
             </li>
             <li>
               <a href="" className="flex items-center">
@@ -36,7 +40,13 @@ const OrderHistory = () => {
           <h1 className="text-2xl text-black font-bold">Order History</h1>
           <div className="mt-8 flex flex-col">
             {orderHistory.map((item) => (
-                <CardHistory id={item.id} name={item.name} desc={item.desc} price={item.price} status={item.status} />
+              <CardHistory
+                id={item.id}
+                name={item.name}
+                desc={item.desc}
+                price={item.price}
+                status={item.status}
+              />
             ))}
           </div>
         </div>

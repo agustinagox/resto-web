@@ -9,11 +9,13 @@ import {
 import React, { Fragment, useState } from "react";
 import { BannerFood2, Menu3 } from "../../assets/illustrations";
 import CardCupon from "../../components/card-cupon/card-cupon";
-import CardRecommend from "../../components/card-recommend/card-recommend";
+import CardRecommend from "../../components/card-food/card-food";
 import Footer from "../../components/footer/footer";
 import Navbar from "../../components/navbar/navbar";
 import { cuponPromo } from "../../store/cupon-promo";
 import { recommend } from "../../store/recommend";
+import "./index.css";
+import { Link } from "react-router-dom";
 
 const Promo = () => {
   const next = () => {
@@ -52,7 +54,7 @@ const Promo = () => {
     }
   };
   return (
-    <div className="bg-gray-100">
+    <div className="page">
       <Navbar type="signin" />
       <div className="relative bg-white py-4">
         <div className="px-4 lg:px-0 container mx-auto">
@@ -234,9 +236,11 @@ const Promo = () => {
                                 <MinusIcon className="h-5 w-5 text-blue-700" />
                               </button>
                             </div>
-                            <button className="bg-blue-700 w-full py-2 text-white rounded-xl">
-                              Add to Bag - $15
-                            </button>
+                            <Link to="/bag" className="w-full">
+                              <button className="bg-blue-700 w-full py-2 text-white rounded-xl">
+                                Add to Bag - $15
+                              </button>
+                            </Link>
                           </div>
                         </div>
                         {/* /End replace */}
@@ -272,7 +276,6 @@ const Promo = () => {
             </li>
           </ol>
         </nav>
-
         <div className="container mx-auto px-4">
           <h1 className="text-2xl mt-4 text-black font-bold">
             Ice Cream Promo

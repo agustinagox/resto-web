@@ -30,7 +30,7 @@ const CardBag = ({
         id={id}
         name="notification-method"
         type="checkbox"
-        className="h-5 w-5 border-gray-300 text-blue-600 focus:ring-blue-500"
+        className="h-6 w-6 m-4 border-gray-300 text-blue-600 focus:ring-blue-500"
       />
       <div className="flex flex-col lg:flex-row lg:items-center mx-4 lg:mx-8 w-full lg:w-max">
         <img src={img} className="w-24 lg:h-full" alt="food-img" />

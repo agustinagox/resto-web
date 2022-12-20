@@ -16,6 +16,7 @@ import CardPayment from "../../components/card-payment/card-payment";
 import Navbar from "../../components/navbar/navbar";
 import { cuponPromo } from "../../store/cupon-promo";
 import { order } from "../../store/order";
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
   const [cardPayment, setCardPayment] = useState(false);
@@ -148,9 +149,11 @@ const Checkout = () => {
           <h1 className="text-black font-extrabold text-lg lg:text-xl">
             Total: $90
           </h1>
-          <button className="bg-blue-700 rounded-lg text-md lg:text-xl text-white p-2 w-36 lg:w-64">
-            Checkout
-          </button>
+          <Link to="/orderprocess">
+            <button className="bg-blue-700 rounded-lg text-md lg:text-xl text-white p-2 w-36 lg:w-64">
+              Checkout
+            </button>
+          </Link>
         </div>
       </div>
     </div>

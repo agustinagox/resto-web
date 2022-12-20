@@ -4,6 +4,7 @@ import CardTnc from "../../components/card-tnc/card-tnc";
 import Footer from "../../components/footer/footer";
 import Navbar from "../../components/navbar/navbar";
 import { tnc } from "../../store/tnc";
+import {Link} from 'react-router-dom'
 
 const TermCondition = () => {
   return (
@@ -14,16 +15,20 @@ const TermCondition = () => {
         <nav className="container mx-auto py-4 px-4">
           <ol className="flex items-center">
             <li>
-              <a href="" className="flex items-center">
-                <span className="text-gray-500">Home</span>
-                <ChevronRightIcon className="h-4 w-4 mx-2 text-gray-500" />
-              </a>
+              <Link to="/main">
+                <a href="" className="flex items-center">
+                  <span className="text-gray-500">Home</span>
+                  <ChevronRightIcon className="h-4 w-4 mx-2 text-gray-500" />
+                </a>
+              </Link>
             </li>
             <li>
-              <a href="" className="flex items-center">
-                <span className="text-gray-500">Account</span>
-                <ChevronRightIcon className="h-4 w-4 mx-2 text-gray-500" />
-              </a>
+              <Link to="/account">
+                <a href="" className="flex items-center">
+                  <span className="text-gray-500">Account</span>
+                  <ChevronRightIcon className="h-4 w-4 mx-2 text-gray-500" />
+                </a>
+              </Link>
             </li>
             <li>
               <a href="" className="flex items-center">
