@@ -3,40 +3,48 @@
 @tailwind utilities;
 
 @layer components {
-  .page {
-    @apply bg-white;
-  }
+
   .container-page {
     @apply container mx-auto px-4 w-full my-24 h-fit;
   }
+
   .wrap-tabs {
     @apply flex border-2 justify-center items-center mx-auto border-gray-300 w-max overflow-hidden rounded-lg;
   }
+
   .nav-tabs {
     @apply text-xl px-4 py-2 rounded-lg;
   }
+
   .active {
     @apply text-white border-blue-600 bg-blue-600;
   }
+
   .input-text {
-    @apply flex-1 w-full outline-none text-lg border-0;
+    @apply flex-1 w-full outline-none text-lg border-0 !important;
   }
+
   .input-password {
-    @apply outline-none border-0 text-lg flex-1 w-full;
+    @apply outline-none border-0 text-lg flex-1 w-full !important;
   }
+
   .container-form {
     @apply mt-12 lg:w-96 mx-auto;
   }
+
   .container-input {
     @apply border-b-[0.8px] border-blue-600 pb-2 w-full;
   }
+
   .button-primary {
-    @apply w-full py-3 text-white text-xl bg-blue-600 rounded-lg
+    @apply w-full py-3 text-white text-xl bg-blue-600 rounded-lg;
   }
+
   .button-social {
-    @apply flex w-full border-2 border-blue-700 py-3 px-4 items-center rounded-xl text-gray-500
+    @apply flex w-full border-2 border-blue-700 py-3 px-4 items-center rounded-xl text-gray-500;
   }
+
   .ic-social {
-    @apply h-6 w-6 mr-3
+    @apply h-6 w-6 mr-3;
   }
 }

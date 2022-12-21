@@ -12,8 +12,9 @@ import { recommend } from "../../store/recommend";
 import CardRecommend from "../../components/card-food/card-food";
 import { Dialog, Transition } from "@headlessui/react";
 import { Menu3 } from "../../assets/illustrations";
-import "./index.css";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
+import "./all-category-style.css";
+import SearchDeliver from "../../components/search-deliver/search-deliver";
 
 const AllCategory = () => {
   const next = () => {
@@ -53,15 +54,10 @@ const AllCategory = () => {
   };
 
   return (
-    <div className="bg-gray-100">
+    <div className="page-gray">
       <Navbar type="signin" />
       <div className="relative bg-white py-4">
-        <div className="px-4 lg:px-0 container mx-auto">
-          <div className="flex space-x-3 border-[0.8px] border-black p-2 px-4 rounded-xl">
-            <MapPinIcon className="h-6 w-6 text-red-500" />
-            <h6 className="text-black text-lg">Deliver to</h6>
-          </div>
-        </div>
+        <SearchDeliver />
         {/* side right */}
         <Transition.Root show={open} as={Fragment}>
           <Dialog as="div" className="relative z-10" onClose={setOpen}>
@@ -241,7 +237,7 @@ const AllCategory = () => {
                                   <MinusIcon className="h-5 w-5 text-blue-700" />
                                 </button>
                               </div>
-                              <Link to='/bag' className="w-full">
+                              <Link to="/bag" className="w-full">
                                 <button className="bg-blue-700 w-full py-2 text-white rounded-xl">
                                   Add to Bag - $15
                                 </button>
@@ -261,29 +257,29 @@ const AllCategory = () => {
         {/* tabs */}
         <div className="wrap-tab">
           <div className="container-tab">
-            <div className="text-gray-500 font-medium px-8 lg:w-full">
+            <div className="text-tab">
               <h3 className="tab-active">Combo</h3>
             </div>
-            <div className="text-gray-500 font-medium px-8 lg:w-full">
+            <div className="text-tab">
               <h3 className="">Pizza</h3>
             </div>
-            <div className="text-gray-500 font-medium px-8 lg:w-full">
+            <div className="text-tab">
               <h3 className="">Burger</h3>
             </div>
-            <div className="text-gray-500 font-medium px-8 lg:w-full">
+            <div className="text-tab">
               <h3 className="">Fries</h3>
             </div>
-            <div className="text-gray-500 font-medium px-8 lg:w-full">
+            <div className="text-tab">
               <h3 className="">Beverages</h3>
             </div>
-            <div className="text-gray-500 font-medium px-8 lg:w-full">
+            <div className="text-tab">
               <h3 className="">Dessert</h3>
             </div>
           </div>
         </div>
       </div>
       {/* content */}
-      <div className="wrap-content">
+      <div className="bg-white my-4 p-4 pb-12">
         <div className="container mx-auto w-full">
           {/* breadcrumbs */}
           <nav className="container mx-auto py-4">

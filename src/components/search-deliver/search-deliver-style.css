@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .wrap {
+    @apply px-4 lg:px-0 container mx-auto;
+  }
+  .container-search {
+    @apply flex space-x-3 border-[0.8px] border-black p-2 px-4 rounded-xl;
+  }
+  .icon-marker {
+    @apply h-6 w-6 text-red-500;
+  }
+}

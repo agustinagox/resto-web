@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Facebook, Google } from "../../assets/illustrations";
 import Navbar from "../../components/navbar/navbar";
 import { Link } from "react-router-dom";
-import './index.css'
+import "./sign-in-up-style.css";
 
 const SignInUp = () => {
   const [signIn, setSignIn] = useState(true);
@@ -24,7 +24,7 @@ const SignInUp = () => {
   };
 
   return (
-    <div className="page">
+    <div className="page-white">
       <Navbar type="signin" />
       <div className="container-page">
         <div className="wrap-tabs">

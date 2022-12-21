@@ -3,4 +3,15 @@
 @tailwind utilities;
 
 @layer components {
+  .page-gray {
+    @apply bg-gray-100;
+  }
+
+  .page-white {
+    @apply bg-white;
+  }
+
+  .text-crumb {
+    @apply text-gray-500
+  }
 }

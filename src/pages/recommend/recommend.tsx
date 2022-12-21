@@ -13,6 +13,7 @@ import Navbar from "../../components/navbar/navbar";
 import { recommend } from "../../store/recommend";
 import { Menu3 } from "../../assets/illustrations";
 import { Link } from "react-router-dom";
+import './recommend-style.css'
 
 const Recommend = () => {
   const next = () => {
@@ -52,7 +53,7 @@ const Recommend = () => {
   };
 
   return (
-    <div className="bg-gray-100">
+    <div className="page">
       <Navbar type="signin" />
       <div className="flex bg-white">
         <div className="px-4 py-4 lg:px-0 container mx-auto">

@@ -16,6 +16,8 @@ import TermCondition from "./pages/term-condition/term-condition";
 import HelpContact from "./pages/help-contact/help-contact";
 import Bag from "./pages/bag/bag";
 
+import './index.css'
+
 function App() {
   return (
     <BrowserRouter>
