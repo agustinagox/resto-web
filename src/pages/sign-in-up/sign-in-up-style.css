@@ -13,7 +13,7 @@
   }
 
   .nav-tabs {
-    @apply text-xl px-4 py-2 rounded-lg;
+    @apply text-xl font-poppins px-4 py-2 rounded-lg;
   }
 
   .active {

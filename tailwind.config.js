@@ -4,11 +4,14 @@ module.exports = withMT({
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {},
+    fontFamily: {
+      poppins: ["Poppins", "sans-serif"],
+    },
   },
   plugins: [
     require("@tailwindcss/line-clamp"),
     require("tailwind-scrollbar"),
     require("@tailwindcss/forms"),
-    require('tailwind-scrollbar-hide'),
+    require("tailwind-scrollbar-hide"),
   ],
 });

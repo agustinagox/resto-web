@@ -74,9 +74,13 @@ const Main = () => {
           <h1 className="text-center text-lg lg:text-xl mb-4 text-black font-semibold">
             Ready for food delivery? Type an address
           </h1>
-          <div className="flex space-x-3 border-[0.8px] border-black p-3 rounded-xl">
+          <div className="flex items-center border-[0.8px] border-black px-4 py-1 rounded-xl">
             <MapPinIcon className="h-6 w-6 text-red-500" />
-            <h6 className="text-black text-lg">Deliver to</h6>
+            <input
+              type="text"
+              className="flex-1 border-0 h-max"
+              placeholder="Deliver to?"
+            />
           </div>
           <Link to="/allcategory">
             {" "}

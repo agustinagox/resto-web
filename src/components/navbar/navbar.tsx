@@ -8,7 +8,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/solid";
 import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
-import "./index.css";
+import "./navbar-style.css";
 import { Link } from "react-router-dom";
 
 type Props = {
@@ -19,10 +19,16 @@ const Navbar = ({ type }: Props) => {
   const [isLogin, setIsLogin] = useState(false);
   const [open, setOpen] = useState(false);
 
+  const [language, setLanguage] = useState(false);
+
+  const handleLanguage = () => {
+    setLanguage(!language);
+  };
+
   // set bg color when scrolling
   const [color, setColor] = useState(false);
   const changeBgColor = () => {
-    if (window.scrollY >= 90) {
+    if (window.scrollY >= 120) {
       setColor(true);
     } else {
       setColor(false);
@@ -34,9 +40,9 @@ const Navbar = ({ type }: Props) => {
   return (
     <div className="container-navbar">
       {type === "signin" ? (
-        <div className="p-4 shadow-sm bg-white">
-          <div className="container mx-auto">
-            <div className="flex items-center space-x-4 lg:space-x-12 justify-between">
+        <div className="p-4 shadow-sm bg-white relative">
+          <div className="container mx-auto relative">
+            <div className="flex items-center space-x-4 lg:space-x-12 justify-between relative">
               <Link to="/main">
                 <img src={Logo} alt="fast-food" className="h-7 lg:h-8" />
               </Link>
@@ -66,12 +72,30 @@ const Navbar = ({ type }: Props) => {
                       />
                     </Link>
                   )}
-                  <div className="flex items-center border-2 p-2 w-max rounded-xl space-x-2">
+                  <div
+                    onClick={handleLanguage}
+                    className="flex items-center border-2 p-2 w-max rounded-xl space-x-2 cursor-pointer"
+                  >
                     <h3 className="text-black text-sm">ENG</h3>
                     <ChevronDownIcon className="text-black h-4 w-4" />
                   </div>
                 </div>
               </div>
+              {language && (
+                <div
+                  className="absolute top-14 right-0 z-20 w-max origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="menu-button"
+                >
+                  <div className="p-2 px-4" role="none">
+                    <div className="flex flex-col space-y-2">
+                      <a className="text-sm">Indonesia</a>
+                      <a className="text-sm">English</a>
+                    </div>
+                  </div>
+                </div>
+              )}
               {/* burger */}
               <div className="sticky top-0 z-10 md:hidden">
                 <button
@@ -174,9 +198,10 @@ const Navbar = ({ type }: Props) => {
                         </div>
                       </Dialog.Panel>
                     </Transition.Child>
-                    <div className="w-14 flex-shrink-0" aria-hidden="true">
-                      {/* Force sidebar to shrink to fit close icon */}
-                    </div>
+                    <div
+                      className="w-14 flex-shrink-0"
+                      aria-hidden="true"
+                    ></div>
                   </div>
                 </Dialog>
               </Transition.Root>
@@ -185,12 +210,16 @@ const Navbar = ({ type }: Props) => {
         </div>
       ) : undefined}
       {type === "global" ? (
-        <div className="p-4 z-10">
+        <div
+          className={
+            color ? "bg-white w-full z-10 relative" : "z-10 mt-4 relative"
+          }
+        >
           <div
             className={
               color
-                ? "container mx-auto bg-white p-2 px-4 rounded-full shadow-lg"
-                : "container mx-auto bg-white p-2 px-4 rounded-full bg-opacity-25"
+                ? "container mx-auto bg-white p-2 px-4 relative"
+                : "container mx-auto bg-white p-2 px-4 rounded-full bg-opacity-25 relative"
             }
           >
             <div className="flex items-center space-x-4 lg:space-x-12 justify-between">
@@ -320,9 +349,11 @@ const Navbar = ({ type }: Props) => {
                   />
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="p-2 w-max rounded-xl bg-white">
-                    <img src={Bag} className="h-5 w-5" alt="" />
-                  </div>
+                  <Link to="/bag">
+                    <div className="p-2 w-max rounded-xl bg-white">
+                      <img src={Bag} className="h-5 w-5" alt="" />
+                    </div>
+                  </Link>
                   {isLogin ? (
                     <div className="p-2 w-max rounded-xl bg-white px-4">
                       <h3 className="text-black text-sm">Sign In/Sign Up</h3>
@@ -336,12 +367,30 @@ const Navbar = ({ type }: Props) => {
                       />
                     </Link>
                   )}
-                  <div className="flex items-center p-2 w-max rounded-xl bg-white space-x-2">
+                  <div
+                    onClick={handleLanguage}
+                    className="flex items-center p-2 w-max rounded-xl bg-white space-x-2 cursor-pointer"
+                  >
                     <h3 className="text-black text-sm">ENG</h3>
                     <ChevronDownIcon className="text-black h-4 w-4" />
                   </div>
                 </div>
               </div>
+              {language && (
+                <div
+                  className="absolute top-14 right-2 z-20 mt-2 w-max origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="menu-button"
+                >
+                  <div className="p-2 px-4" role="none">
+                    <div className="flex flex-col space-y-2">
+                      <a className="text-sm">Indonesia</a>
+                      <a className="text-sm">English</a>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
